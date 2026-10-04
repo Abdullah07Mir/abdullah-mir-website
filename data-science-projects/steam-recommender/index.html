@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-GB" data-paths="1">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Steam Game Recommender: Data Science Project | Abdullah Mir</title>
+<meta name="description" content="A collaborative-filtering recommender built with Spark MLlib on 200,000 Steam purchase and playtime records, tuned across eight ALS configurations and…">
+<link rel="canonical" href="https://abdullah-mir.co.uk/data-science-projects/steam-recommender/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Abdullah Mir">
+<meta name="theme-color" content="#0B0E12" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#F3F6FC" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Abdullah Mir"><meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Steam Game Recommender: Data Science Project | Abdullah Mir"><meta property="og:description" content="A collaborative-filtering recommender built with Spark MLlib on 200,000 Steam purchase and playtime records, tuned across eight ALS configurations and…"><meta property="og:url" content="https://abdullah-mir.co.uk/data-science-projects/steam-recommender/">
+<meta property="og:image" content="https://abdullah-mir.co.uk/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Abdullah Mir, Flutter developer and data scientist in Manchester, UK">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Steam Game Recommender: Data Science Project | Abdullah Mir"><meta name="twitter:description" content="A collaborative-filtering recommender built with Spark MLlib on 200,000 Steam purchase and playtime records, tuned across eight ALS configurations and…"><meta name="twitter:image" content="https://abdullah-mir.co.uk/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://abdullah-mir.co.uk/data-science-projects/steam-recommender/#webpage","url":"https://abdullah-mir.co.uk/data-science-projects/steam-recommender/","name":"Steam Game Recommender: Data Science Project | Abdullah Mir","description":"A collaborative-filtering recommender built with Spark MLlib on 200,000 Steam purchase and playtime records, tuned across eight ALS configurations and…","inLanguage":"en-GB","isPartOf":{"@id":"https://abdullah-mir.co.uk/#website"},"about":{"@id":"https://abdullah-mir.co.uk/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://abdullah-mir.co.uk/"},{"@type":"ListItem","position":2,"name":"Data science projects","item":"https://abdullah-mir.co.uk/data-science-projects/"},{"@type":"ListItem","position":3,"name":"Steam Game Recommender","item":"https://abdullah-mir.co.uk/data-science-projects/steam-recommender/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="/app.css?v=45783115">
+</head>
+<body data-mode="data">
+<div class="bg" aria-hidden="true"></div>
+<div class="routebar" id="routebar" aria-hidden="true"></div>
+
+<div class="layout">
+  <aside class="side">
+    <div class="brand">
+      <a class="who" href="/" data-go="home" aria-label="Abdullah Mir, home">
+        <span class="avatar"><span class="ring"></span><span class="face" id="face">AM</span></span>
+        <span class="who-t"><b>Abdullah Mir</b><small>Senior Flutter Developer<br>and Data Scientist</small></span>
+      </a>
+      <div class="eptools">
+        <button type="button" class="icon-btn" id="theme" aria-label="Switch colour theme"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+        <button type="button" class="icon-btn" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><div><span></span><span></span><span></span></div></button>
+      </div>
+    </div>
+    <div class="menu" id="menu">
+      <p class="loc"><i></i>Manchester, UK · open to opportunities</p>
+      <nav class="links" id="links" aria-label="Pages">
+        <span class="ind" id="ind"></span>
+        <a href="/" data-page="home">Home</a>
+        <a href="/data-science-projects/" data-page="projects">Projects</a>
+        <a href="/experience/" data-page="experience">Experience</a>
+        <a href="/education/" data-page="education">Education</a>
+        <a href="/certificates/" data-page="certificates">Certificates</a>
+        <a href="/contact/" data-page="contact">Contact</a>
+      </nav>
+      <div class="socials">
+        <a id="s-gh" href="https://github.com/abdullah07mir" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        <a id="s-li" href="https://www.linkedin.com/in/abdullah-mir-a46103249/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="/contact/" data-go="contact" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- HOME -->
+    <section class="page" id="page-project" aria-label="Project write-up"><div id="proj"><article class="proj" style="--sp:var(--data)">
+      <a class="back" href="/data-science-projects/" data-go="data"><span aria-hidden="true">←</span> All projects</a>
+      <header class="phead"><div class="meta"><span>Big data</span><span>MSc Data Science · University of Salford</span></div>
+        <h1 tabindex="-1">Steam Game Recommender</h1>
+        <div class="chiprow"><span class="chip">PySpark</span><span class="chip">Spark MLlib</span><span class="chip">ALS</span><span class="chip">Databricks</span><span class="chip">MLflow</span><span class="chip">Collaborative filtering</span></div>
+        <p class="plead">A scalable recommender that learns what 12,393 Steam players are likely to enjoy from implicit signals alone, purchases and hours played, and returns a ranked top-10 list for every user and the ten most likely players for every game. Built end to end in PySpark on Databricks, with every experiment logged in MLflow.</p></header>
+      <div class="pkpis"><div><b>200K</b><small>Interactions modelled</small></div><div><b>12,393</b><small>Users</small></div><div><b>5,155</b><small>Games</small></div><div><b>0.209</b><small>Best held-out RMSE</small></div></div>
+      <div class="pgrid"><div class="pmain">
+        <section class="psec"><h3>The problem</h3><p>A player faces thousands of titles, and Steam gives no star ratings, only whether a user bought a game and how long they played it. A recommender has to infer taste from behaviour, and the signal is noisy and heavily skewed: a handful of titles absorb most of the playtime.</p></section>
+        <section class="psec"><h3>The data</h3><ul class="pts"><li>129,511 purchase events and 70,489 play events across 12,393 users and 5,155 games, with no missing values.</li><li>Playtime is strongly right-skewed (mean 48.9 hours, standard deviation 229, maximum 999). Dota 2 alone logs 981,685 hours, about three times the runner-up.</li></ul></section>
+        <section class="psec"><h3>Approach</h3><ol class="steps"><li><b>Explore at scale</b><span>Spark DataFrame aggregations for the most-played, most-purchased and most-popular games, and the heaviest users.</span></li><li><b>Engineer implicit ratings</b><span>Purchase = 1.0; play = log(1 + hours) to tame the long tail; both summed per user–game pair, then min–max scaled to [0, 1].</span></li><li><b>Encode identifiers</b><span>StringIndexer converts user and game identifiers to the integer IDs that ALS requires.</span></li><li><b>Train a baseline</b><span>ALS with implicit preferences on an 80/20 split, with cold-start rows dropped from evaluation.</span></li><li><b>Tune systematically</b><span>Grid over rank (10, 20), regularisation (0.01, 0.1) and iterations (10, 20): eight models compared by held-out RMSE.</span></li><li><b>Track and serve</b><span>Parameters, RMSE and the model logged to MLflow (experiment Steam_Optimized_Recommender); top-10 games per user and top-10 users per game mapped back to readable game names.</span></li></ol></section>
+        <section class="psec"><h3>Results</h3><div class="chart-block"><h4>Held-out RMSE by ALS configuration (lower is better)</h4><div class="chart-wrap" data-chart="c0"><svg class="chart" viewBox="0 0 640 300" role="img" aria-label="Held-out RMSE by ALS configuration (lower is better)"><line class="gl" x1="52" x2="622" y1="262" y2="262"></line><text x="44" y="266" text-anchor="end">0</text><line class="gl" x1="52" x2="622" y1="200.5" y2="200.5"></line><text x="44" y="204.5" text-anchor="end">0.075</text><line class="gl" x1="52" x2="622" y1="139" y2="139"></line><text x="44" y="143" text-anchor="end">0.15</text><line class="gl" x1="52" x2="622" y1="77.5" y2="77.5"></line><text x="44" y="81.5" text-anchor="end">0.225</text><line class="gl" x1="52" x2="622" y1="16" y2="16"></line><text x="44" y="20" text-anchor="end">0.3</text><text x="123.25" y="286" text-anchor="middle">λ 0.01 · 10 it</text><text x="265.75" y="286" text-anchor="middle">λ 0.01 · 20 it</text><text x="408.25" y="286" text-anchor="middle">λ 0.1 · 10 it</text><text x="550.75" y="286" text-anchor="middle">λ 0.1 · 20 it</text><path class="bar" style="animation-delay:0ms" fill="var(--s1)" d="M92.25 262V70.75799999999998Q92.25 66.75799999999998 96.25 66.75799999999998H118.25Q122.25 66.75799999999998 122.25 70.75799999999998V262Z"></path><path class="bar" style="animation-delay:50ms" fill="var(--s1)" d="M234.75 262V67.15Q234.75 63.150000000000006 238.75 63.150000000000006H260.75Q264.75 63.150000000000006 264.75 67.15V262Z"></path><path class="bar" style="animation-delay:100ms" fill="var(--s1)" d="M377.25 262V94.29199999999997Q377.25 90.29199999999997 381.25 90.29199999999997H403.25Q407.25 90.29199999999997 407.25 94.29199999999997V262Z"></path><path class="bar" style="animation-delay:150ms" fill="var(--s1)" d="M519.75 262V94.29199999999997Q519.75 90.29199999999997 523.75 90.29199999999997H545.75Q549.75 90.29199999999997 549.75 94.29199999999997V262Z"></path><path class="bar" style="animation-delay:0ms" fill="var(--s2)" d="M124.25 262V55.66999999999999Q124.25 51.66999999999999 128.25 51.66999999999999H150.25Q154.25 51.66999999999999 154.25 55.66999999999999V262Z"></path><path class="bar" style="animation-delay:50ms" fill="var(--s2)" d="M266.75 262V49.847999999999985Q266.75 45.847999999999985 270.75 45.847999999999985H292.75Q296.75 45.847999999999985 296.75 49.847999999999985V262Z"></path><path class="bar" style="animation-delay:100ms" fill="var(--s2)" d="M409.25 262V87.814Q409.25 83.814 413.25 83.814H435.25Q439.25 83.814 439.25 87.814V262Z"></path><path class="bar" style="animation-delay:150ms" fill="var(--s2)" d="M551.75 262V87.97800000000001Q551.75 83.97800000000001 555.75 83.97800000000001H577.75Q581.75 83.97800000000001 581.75 87.97800000000001V262Z"></path><line class="cross" y1="16" y2="262" visibility="hidden"></line></svg><div class="tip" hidden=""></div></div><div class="legend"><span><i style="background:var(--s1)"></i>Rank 10</span><span><i style="background:var(--s2)"></i>Rank 20</span></div>
+      <details><summary>View as table</summary><div class="tblwrap"><table><thead><tr><th></th><th>Rank 10</th><th>Rank 20</th></tr></thead><tbody><tr><td>λ 0.01 · 10 it</td><td>0.238</td><td>0.257</td></tr><tr><td>λ 0.01 · 20 it</td><td>0.242</td><td>0.264</td></tr><tr><td>λ 0.1 · 10 it</td><td>0.209</td><td>0.217</td></tr><tr><td>λ 0.1 · 20 it</td><td>0.209</td><td>0.217</td></tr></tbody></table></div></details></div><div class="chart-block"><h4>Most-played games (total hours played)</h4><div class="hbars" role="img" aria-label="Most-played games (total hours played)"><div class="hb" style="--w:98.2%;--i:0"><span class="hl">Dota 2</span><span class="hv"><i></i></span><b>981,685</b></div><div class="hb" style="--w:32.3%;--i:1"><span class="hl">Counter-Strike: GO</span><span class="hv"><i></i></span><b>322,772</b></div><div class="hb" style="--w:17.4%;--i:2"><span class="hl">Team Fortress 2</span><span class="hv"><i></i></span><b>173,673</b></div><div class="hb" style="--w:13.4%;--i:3"><span class="hl">Counter-Strike</span><span class="hv"><i></i></span><b>134,261</b></div><div class="hb" style="--w:10.0%;--i:4"><span class="hl">Civilization V</span><span class="hv"><i></i></span><b>99,821</b></div><div class="hb" style="--w:9.6%;--i:5"><span class="hl">CS: Source</span><span class="hv"><i></i></span><b>96,076</b></div><div class="hb" style="--w:7.1%;--i:6"><span class="hl">Skyrim</span><span class="hv"><i></i></span><b>70,889</b></div><div class="hb" style="--w:5.0%;--i:7"><span class="hl">Garry's Mod</span><span class="hv"><i></i></span><b>49,725</b></div><div class="hb" style="--w:4.2%;--i:8"><span class="hl">CoD: MW2 Multiplayer</span><span class="hv"><i></i></span><b>42,010</b></div><div class="hb" style="--w:3.4%;--i:9"><span class="hl">Left 4 Dead 2</span><span class="hv"><i></i></span><b>33,597</b></div></div>
+      <details><summary>View as table</summary><div class="tblwrap"><table><tbody><tr><td>Dota 2</td><td>981,685</td></tr><tr><td>Counter-Strike: GO</td><td>322,772</td></tr><tr><td>Team Fortress 2</td><td>173,673</td></tr><tr><td>Counter-Strike</td><td>134,261</td></tr><tr><td>Civilization V</td><td>99,821</td></tr><tr><td>CS: Source</td><td>96,076</td></tr><tr><td>Skyrim</td><td>70,889</td></tr><tr><td>Garry's Mod</td><td>49,725</td></tr><tr><td>CoD: MW2 Multiplayer</td><td>42,010</td></tr><tr><td>Left 4 Dead 2</td><td>33,597</td></tr></tbody></table></div></details></div></section>
+        <section class="psec"><h3>Key findings</h3><ul class="pts"><li>Regularisation was the deciding hyperparameter: a value of 0.1 held RMSE at 0.209 to 0.217, while 0.01 pushed it to 0.238 to 0.264, a clear sign of over-fitting on sparse interactions.</li><li>A smaller latent space generalised better: rank 10 beat rank 20 at the same regularisation (0.2094 against 0.2171).</li><li>The search confirmed that Spark’s default settings (rank 10, regularisation 0.1) were already effectively optimal, with the winning configuration improving RMSE by less than 0.00001, and showed exactly which settings to avoid.</li><li>Every user receives ten ranked game suggestions with predicted preference scores, and every game receives ten candidate players.</li></ul></section>
+        <section class="psec"><h3>Next steps</h3><ul class="pts"><li>Add ranking metrics (precision@k, MAP, NDCG), which suit top-N recommendation better than RMSE on implicit scores.</li><li>Benchmark against a popularity baseline and item-based neighbours.</li><li>Bring in side information such as genre and price to ease the cold-start problem.</li></ul></section>
+      </div>
+      <aside class="pside"><div class="glance"><h4>At a glance</h4><dl><div><dt>Dataset</dt><dd>Steam-200k: purchase and play events per user and game</dd></div><div><dt>Task</dt><dd>Implicit-feedback recommendation</dd></div><div><dt>Stack</dt><dd>PySpark, Spark MLlib (ALS), Databricks, MLflow</dd></div><div><dt>Validation</dt><dd>80/20 random split (seed 42), RMSE on normalised preference scores</dd></div></dl></div>
+        </aside></div>
+      <nav class="pnav" aria-label="More projects">
+        <a class="pn prev" href="/data-science-projects/lifestyle-clustering/" data-go="project/lifestyle-clustering"><small>← Previous project</small><b>Lifestyle and Obesity Segmentation</b></a>
+        <a class="pn next" href="/data-science-projects/clinical-trials/" data-go="project/clinical-trials"><small>Next project →</small><b>Clinical Trials Analytics at Scale</b></a></nav></article></div></section>
+
+    <!-- PROJECTS -->
+    
+
+    <!-- PROJECT DETAIL -->
+    
+
+    <!-- EXPERIENCE -->
+    
+
+    <!-- EDUCATION -->
+    
+
+    <!-- CERTIFICATES -->
+    
+
+    <!-- CONTACT -->
+    
+
+
+    <!-- LANDING: FLUTTER DEVELOPER -->
+    
+
+    <!-- LANDING: DATA SCIENTIST -->
+    
+
+    <!-- LANDING: FREELANCE FLUTTER DEVELOPER -->
+    
+
+    <footer>
+      <span>© <span id="yr">2026</span> Abdullah Mir</span>
+      <nav class="flinks" aria-label="More about me">
+        <a href="/flutter-developer/" data-go="flutter-developer">Flutter developer</a>
+        <a href="/data-scientist/" data-go="data-scientist">Data scientist</a>
+        <a href="/freelance-flutter-developer/" data-go="freelance-flutter-developer">Freelance Flutter developer</a>
+      </nav>
+      <span>Flutter · Data Science · Manchester</span>
+    </footer>
+  </main>
+</div>
+
+<script src="/app.js?v=45783115" defer></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-GB" data-paths="1">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Airport Ticketing System in SQL Server: Data Science Project | Abdullah Mir</title>
+<meta name="description" content="A relational back end for airline ticketing: six tables, five stored procedures, two functions, two views, a trigger and role-based security.">
+<link rel="canonical" href="https://abdullah-mir.co.uk/data-science-projects/airport-ticketing-db/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Abdullah Mir">
+<meta name="theme-color" content="#0B0E12" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#F3F6FC" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Abdullah Mir"><meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Airport Ticketing System in SQL Server: Data Science Project | Abdullah Mir"><meta property="og:description" content="A relational back end for airline ticketing: six tables, five stored procedures, two functions, two views, a trigger and role-based security."><meta property="og:url" content="https://abdullah-mir.co.uk/data-science-projects/airport-ticketing-db/">
+<meta property="og:image" content="https://abdullah-mir.co.uk/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Abdullah Mir, Flutter developer and data scientist in Manchester, UK">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Airport Ticketing System in SQL Server: Data Science Project | Abdullah Mir"><meta name="twitter:description" content="A relational back end for airline ticketing: six tables, five stored procedures, two functions, two views, a trigger and role-based security."><meta name="twitter:image" content="https://abdullah-mir.co.uk/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://abdullah-mir.co.uk/data-science-projects/airport-ticketing-db/#webpage","url":"https://abdullah-mir.co.uk/data-science-projects/airport-ticketing-db/","name":"Airport Ticketing System in SQL Server: Data Science Project | Abdullah Mir","description":"A relational back end for airline ticketing: six tables, five stored procedures, two functions, two views, a trigger and role-based security.","inLanguage":"en-GB","isPartOf":{"@id":"https://abdullah-mir.co.uk/#website"},"about":{"@id":"https://abdullah-mir.co.uk/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://abdullah-mir.co.uk/"},{"@type":"ListItem","position":2,"name":"Data science projects","item":"https://abdullah-mir.co.uk/data-science-projects/"},{"@type":"ListItem","position":3,"name":"Airport Ticketing System in SQL Server","item":"https://abdullah-mir.co.uk/data-science-projects/airport-ticketing-db/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="/app.css?v=45783115">
+</head>
+<body data-mode="data">
+<div class="bg" aria-hidden="true"></div>
+<div class="routebar" id="routebar" aria-hidden="true"></div>
+
+<div class="layout">
+  <aside class="side">
+    <div class="brand">
+      <a class="who" href="/" data-go="home" aria-label="Abdullah Mir, home">
+        <span class="avatar"><span class="ring"></span><span class="face" id="face">AM</span></span>
+        <span class="who-t"><b>Abdullah Mir</b><small>Senior Flutter Developer<br>and Data Scientist</small></span>
+      </a>
+      <div class="eptools">
+        <button type="button" class="icon-btn" id="theme" aria-label="Switch colour theme"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+        <button type="button" class="icon-btn" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><div><span></span><span></span><span></span></div></button>
+      </div>
+    </div>
+    <div class="menu" id="menu">
+      <p class="loc"><i></i>Manchester, UK · open to opportunities</p>
+      <nav class="links" id="links" aria-label="Pages">
+        <span class="ind" id="ind"></span>
+        <a href="/" data-page="home">Home</a>
+        <a href="/data-science-projects/" data-page="projects">Projects</a>
+        <a href="/experience/" data-page="experience">Experience</a>
+        <a href="/education/" data-page="education">Education</a>
+        <a href="/certificates/" data-page="certificates">Certificates</a>
+        <a href="/contact/" data-page="contact">Contact</a>
+      </nav>
+      <div class="socials">
+        <a id="s-gh" href="https://github.com/abdullah07mir" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        <a id="s-li" href="https://www.linkedin.com/in/abdullah-mir-a46103249/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="/contact/" data-go="contact" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- HOME -->
+    <section class="page" id="page-project" aria-label="Project write-up"><div id="proj"><article class="proj" style="--sp:var(--data)">
+      <a class="back" href="/data-science-projects/" data-go="data"><span aria-hidden="true">←</span> All projects</a>
+      <header class="phead"><div class="meta"><span>Databases</span><span>MSc Data Science · University of Salford</span></div>
+        <h1 tabindex="-1">Airport Ticketing System in SQL Server</h1>
+        <div class="chiprow"><span class="chip">T-SQL</span><span class="chip">SQL Server</span><span class="chip">Database design</span><span class="chip">Stored procedures</span><span class="chip">Triggers</span><span class="chip">Security</span></div>
+        <p class="plead">A complete SQL Server database for an airport ticketing desk covering passengers, flights, reservations, tickets and baggage. Business rules are enforced inside the database itself, revenue and occupancy reporting is wrapped in views, and access is split across staff, supervisor and admin roles.</p></header>
+      <div class="pkpis"><div><b>6</b><small>Tables</small></div><div><b>5</b><small>Stored procedures</small></div><div><b>2</b><small>Functions</small></div><div><b>2</b><small>Views</small></div><div><b>1</b><small>Trigger</small></div><div><b>3</b><small>Security roles</small></div></div>
+      <div class="pgrid"><div class="pmain">
+        <section class="psec"><h3>The problem</h3><p>A ticketing desk needs fast, correct answers: who is booked on which flight, which seat, what was paid, which bags are checked in. The database has to protect that data from bad input and from users who should not touch it.</p></section>
+        <section class="psec"><h3>The data</h3><ul class="pts"><li>Six related tables: Employees, Passengers, Flights, Reservations, Tickets and Baggage.</li><li>CHECK constraints restrict employee role, meal preference, reservation status, ticket class and baggage status; UNIQUE constraints protect PNRs, e-mail addresses, flight numbers and e-boarding numbers.</li></ul></section>
+        <section class="psec"><h3>Approach</h3><ol class="steps"><li><b>Model the schema</b><span>Primary and foreign keys connect passengers to reservations, reservations to flights and tickets, tickets to issuing employees and baggage.</span></li><li><b>Enforce business rules</b><span>Reservation dates cannot be in the past, enforced by a CHECK constraint and by a guarded InsertReservation procedure that raises a clear error.</span></li><li><b>Wrap logic in procedures and functions</b><span>Search tickets by surname, update passenger details with an existence check, hash passwords on employee creation, and generate a complete boarding pass.</span></li><li><b>Report with views</b><span>Per-ticket revenue combining fare, baggage fees and seat fare; per-flight tickets issued and occupancy percentage.</span></li><li><b>Automate with a trigger</b><span>Issuing a ticket automatically marks the seat as reserved.</span></li><li><b>Lock it down</b><span>Three database roles with least-privilege permissions, mapped to SQL logins and users.</span></li></ol></section>
+        <section class="psec"><h3>Design and database objects</h3><figure class="erdfig"><div class="erdw"><svg class="erd" viewBox="0 0 640 340" role="img" aria-label="Entity relationship diagram: passengers and flights feed reservations, which lead to tickets; employees issue tickets and tickets carry baggage"><path d="M194 79H212V150H230M194 259H212V188H230M410 169H446M536 88V130M536 208V250"></path><circle cx="230" cy="150" r="3.6"></circle><circle cx="230" cy="188" r="3.6"></circle><circle cx="446" cy="169" r="3.6"></circle><circle cx="536" cy="130" r="3.6"></circle><circle cx="536" cy="250" r="3.6"></circle><g><rect x="14" y="40" width="180" height="78" rx="10"></rect><text class="t" x="26" y="60">Passengers</text><text class="l" x="26" y="80"><tspan class="k">PK</tspan> PassengerID</text><text class="l" x="26" y="94"><tspan class="k">UQ</tspan> PNR · Email</text><text class="l" x="26" y="108">Name · DoB · Meal</text></g><g><rect x="14" y="220" width="180" height="78" rx="10"></rect><text class="t" x="26" y="240">Flights</text><text class="l" x="26" y="260"><tspan class="k">PK</tspan> FlightID</text><text class="l" x="26" y="274"><tspan class="k">UQ</tspan> FlightNumber</text><text class="l" x="26" y="288">Origin · Destination</text></g><g><rect x="230" y="130" width="180" height="78" rx="10"></rect><text class="t" x="242" y="150">Reservations</text><text class="l" x="242" y="170"><tspan class="k">PK</tspan> ReservationID</text><text class="l" x="242" y="184"><tspan class="k">FK</tspan> PNR → Passengers</text><text class="l" x="242" y="198"><tspan class="k">FK</tspan> FlightID → Flights</text></g><g><rect x="446" y="10" width="180" height="78" rx="10"></rect><text class="t" x="458" y="30">Employees</text><text class="l" x="458" y="50"><tspan class="k">PK</tspan> EmployeeID</text><text class="l" x="458" y="64"><tspan class="k">UQ</tspan> Username · Email</text><text class="l" x="458" y="78">Role · PasswordHash</text></g><g><rect x="446" y="130" width="180" height="78" rx="10"></rect><text class="t" x="458" y="150">Tickets</text><text class="l" x="458" y="170"><tspan class="k">PK</tspan> TicketID</text><text class="l" x="458" y="184"><tspan class="k">FK</tspan> ReservationID</text><text class="l" x="458" y="198"><tspan class="k">FK</tspan> EmployeeID</text></g><g><rect x="446" y="250" width="180" height="78" rx="10"></rect><text class="t" x="458" y="270">Baggage</text><text class="l" x="458" y="290"><tspan class="k">PK</tspan> BaggageID</text><text class="l" x="458" y="304"><tspan class="k">FK</tspan> TicketID</text><text class="l" x="458" y="318">Weight · Status · Fee</text></g></svg></div><figcaption>Entity relationships. A dot marks the many side of each relationship.</figcaption></figure><div class="chart-block"><div class="tblwrap"><table class="rt txt"><caption>Programmable objects</caption>
+      <thead><tr><th scope="col">Type</th><th scope="col">Name</th><th scope="col">What it does</th></tr></thead>
+      <tbody><tr><td>Procedure</td><td>InsertReservation</td><td>Inserts a reservation and rejects dates in the past</td></tr><tr><td>Procedure</td><td>SearchTicketsByLastName</td><td>Finds a passenger’s tickets by surname, most recent first</td></tr><tr><td>Procedure</td><td>InsertEmployee</td><td>Adds an employee and stores a SHA-256 password hash</td></tr><tr><td>Procedure</td><td>UpdatePassengerDetails</td><td>Updates passenger records after checking the PNR exists</td></tr><tr><td>Procedure</td><td>GenerateBoardingPass</td><td>Joins passenger, flight, seat, baggage and issuing agent into one boarding pass</td></tr><tr><td>Function</td><td>GetBusinessClassPassengersWithMeals</td><td>Table-valued: passengers of a chosen ticket class (for example Business) with their meal preferences, for today’s reservations</td></tr><tr><td>Function</td><td>GetCheckedInBaggageCount</td><td>Scalar: checked-in bags for a flight on a given date</td></tr><tr><td>View</td><td>EmployeeRevenueView</td><td>Revenue per ticket: fare plus baggage fees plus seat fare, by employee</td></tr><tr><td>View</td><td>FlightOccupancyView</td><td>Tickets issued and occupancy percentage per confirmed flight</td></tr><tr><td>Trigger</td><td>UpdateSeatStatusOnTicketIssue</td><td>Marks the seat as reserved when a ticket is issued</td></tr></tbody></table></div></div></section>
+        <section class="psec"><h3>Key findings</h3><ul class="pts"><li>Pushing validation into constraints, procedures and a trigger keeps data consistent no matter which application writes to it.</li><li>Views capture the revenue and occupancy logic once, so reports become one-line queries.</li><li>Least-privilege roles keep duties apart: ticketing staff cannot delete passengers or edit employees, supervisors manage reservations and tickets, and the admin role holds database control.</li></ul></section>
+        <section class="psec"><h3>Next steps</h3><ul class="pts"><li>Add indexes on the PNR and FlightID foreign keys and verify the gain with execution plans.</li><li>Rewrite the trigger to be set-based so it handles multi-row inserts.</li><li>Model aircraft capacity so occupancy is measured against real seat counts.</li></ul></section>
+      </div>
+      <aside class="pside"><div class="glance"><h4>At a glance</h4><dl><div><dt>Platform</dt><dd>Microsoft SQL Server, T-SQL</dd></div><div><dt>Design</dt><dd>Identity primary keys, foreign keys, UNIQUE and CHECK constraints</dd></div><div><dt>Security</dt><dd>SHA-256 password hashing, role-based GRANT and DENY</dd></div><div><dt>Scope</dt><dd>Employees, passengers, flights, reservations, tickets, baggage</dd></div></dl></div>
+        </aside></div>
+      <nav class="pnav" aria-label="More projects">
+        <a class="pn prev" href="/data-science-projects/clinical-trials/" data-go="project/clinical-trials"><small>← Previous project</small><b>Clinical Trials Analytics at Scale</b></a>
+        <a class="pn next" href="/data-science-projects/online-shopping-sql/" data-go="project/online-shopping-sql"><small>Next project →</small><b>Online Shopping Analytics in SQL Server</b></a></nav></article></div></section>
+
+    <!-- PROJECTS -->
+    
+
+    <!-- PROJECT DETAIL -->
+    
+
+    <!-- EXPERIENCE -->
+    
+
+    <!-- EDUCATION -->
+    
+
+    <!-- CERTIFICATES -->
+    
+
+    <!-- CONTACT -->
+    
+
+
+    <!-- LANDING: FLUTTER DEVELOPER -->
+    
+
+    <!-- LANDING: DATA SCIENTIST -->
+    
+
+    <!-- LANDING: FREELANCE FLUTTER DEVELOPER -->
+    
+
+    <footer>
+      <span>© <span id="yr">2026</span> Abdullah Mir</span>
+      <nav class="flinks" aria-label="More about me">
+        <a href="/flutter-developer/" data-go="flutter-developer">Flutter developer</a>
+        <a href="/data-scientist/" data-go="data-scientist">Data scientist</a>
+        <a href="/freelance-flutter-developer/" data-go="freelance-flutter-developer">Freelance Flutter developer</a>
+      </nav>
+      <span>Flutter · Data Science · Manchester</span>
+    </footer>
+  </main>
+</div>
+
+<script src="/app.js?v=45783115" defer></script>
+</body>
+</html>

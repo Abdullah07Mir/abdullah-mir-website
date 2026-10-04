@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-GB" data-paths="1">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Online Shopping Analytics in SQL Server: Data Science Project | Abdullah Mir</title>
+<meta name="description" content="Foreign keys over five imported CSV tables, then ten T-SQL answers to business questions: subqueries, joins, aggregation, TOP-N ranking, VAT arithmetic and a…">
+<link rel="canonical" href="https://abdullah-mir.co.uk/data-science-projects/online-shopping-sql/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Abdullah Mir">
+<meta name="theme-color" content="#0B0E12" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#F3F6FC" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Abdullah Mir"><meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Online Shopping Analytics in SQL Server: Data Science Project | Abdullah Mir"><meta property="og:description" content="Foreign keys over five imported CSV tables, then ten T-SQL answers to business questions: subqueries, joins, aggregation, TOP-N ranking, VAT arithmetic and a…"><meta property="og:url" content="https://abdullah-mir.co.uk/data-science-projects/online-shopping-sql/">
+<meta property="og:image" content="https://abdullah-mir.co.uk/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Abdullah Mir, Flutter developer and data scientist in Manchester, UK">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Online Shopping Analytics in SQL Server: Data Science Project | Abdullah Mir"><meta name="twitter:description" content="Foreign keys over five imported CSV tables, then ten T-SQL answers to business questions: subqueries, joins, aggregation, TOP-N ranking, VAT arithmetic and a…"><meta name="twitter:image" content="https://abdullah-mir.co.uk/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://abdullah-mir.co.uk/data-science-projects/online-shopping-sql/#webpage","url":"https://abdullah-mir.co.uk/data-science-projects/online-shopping-sql/","name":"Online Shopping Analytics in SQL Server: Data Science Project | Abdullah Mir","description":"Foreign keys over five imported CSV tables, then ten T-SQL answers to business questions: subqueries, joins, aggregation, TOP-N ranking, VAT arithmetic and a…","inLanguage":"en-GB","isPartOf":{"@id":"https://abdullah-mir.co.uk/#website"},"about":{"@id":"https://abdullah-mir.co.uk/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://abdullah-mir.co.uk/"},{"@type":"ListItem","position":2,"name":"Data science projects","item":"https://abdullah-mir.co.uk/data-science-projects/"},{"@type":"ListItem","position":3,"name":"Online Shopping Analytics in SQL Server","item":"https://abdullah-mir.co.uk/data-science-projects/online-shopping-sql/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="/app.css?v=45783115">
+</head>
+<body data-mode="data">
+<div class="bg" aria-hidden="true"></div>
+<div class="routebar" id="routebar" aria-hidden="true"></div>
+
+<div class="layout">
+  <aside class="side">
+    <div class="brand">
+      <a class="who" href="/" data-go="home" aria-label="Abdullah Mir, home">
+        <span class="avatar"><span class="ring"></span><span class="face" id="face">AM</span></span>
+        <span class="who-t"><b>Abdullah Mir</b><small>Senior Flutter Developer<br>and Data Scientist</small></span>
+      </a>
+      <div class="eptools">
+        <button type="button" class="icon-btn" id="theme" aria-label="Switch colour theme"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+        <button type="button" class="icon-btn" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><div><span></span><span></span><span></span></div></button>
+      </div>
+    </div>
+    <div class="menu" id="menu">
+      <p class="loc"><i></i>Manchester, UK · open to opportunities</p>
+      <nav class="links" id="links" aria-label="Pages">
+        <span class="ind" id="ind"></span>
+        <a href="/" data-page="home">Home</a>
+        <a href="/data-science-projects/" data-page="projects">Projects</a>
+        <a href="/experience/" data-page="experience">Experience</a>
+        <a href="/education/" data-page="education">Education</a>
+        <a href="/certificates/" data-page="certificates">Certificates</a>
+        <a href="/contact/" data-page="contact">Contact</a>
+      </nav>
+      <div class="socials">
+        <a id="s-gh" href="https://github.com/abdullah07mir" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        <a id="s-li" href="https://www.linkedin.com/in/abdullah-mir-a46103249/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="/contact/" data-go="contact" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- HOME -->
+    <section class="page" id="page-project" aria-label="Project write-up"><div id="proj"><article class="proj" style="--sp:var(--data)">
+      <a class="back" href="/data-science-projects/" data-go="data"><span aria-hidden="true">←</span> All projects</a>
+      <header class="phead"><div class="meta"><span>Databases</span><span>MSc Data Science · University of Salford</span></div>
+        <h1 tabindex="-1">Online Shopping Analytics in SQL Server</h1>
+        <div class="chiprow"><span class="chip">T-SQL</span><span class="chip">SQL Server</span><span class="chip">Subqueries</span><span class="chip">Joins</span><span class="chip">Aggregation</span><span class="chip">Stored procedures</span></div>
+        <p class="plead">A SQL Server database for an online shop covering customers, orders, order lines, products and payments. After connecting the imported CSV tables with foreign keys, I wrote T-SQL to answer ten business questions using correlated subqueries, multi-table joins, grouped aggregates, TOP-N ranking, VAT calculations and a stored procedure that discounts high-value payments.</p></header>
+      <div class="pkpis"><div><b>5</b><small>Tables</small></div><div><b>4</b><small>Foreign keys</small></div><div><b>9</b><small>Analytical queries</small></div><div><b>1</b><small>Stored procedure</small></div></div>
+      <div class="pgrid"><div class="pmain">
+        <section class="psec"><h3>The problem</h3><p>An online retailer wants answers from its order data: which customers spend in a given range, what sells and how much revenue each product earns, which orders are the most valuable, and which payments qualify for a discount. The first step is a relational model the data can be trusted in.</p></section>
+        <section class="psec"><h3>The data</h3><ul class="pts"><li>Five tables imported from CSV files: Customers, Orders, Order_items, Products and Payments.</li><li>Customers carry a country, which the UK and Australia queries filter on; Products carry a category such as Electronics; Payments record the payment method and the amount paid.</li></ul></section>
+        <section class="psec"><h3>Approach</h3><ol class="steps"><li><b>Connect the tables</b><span>Four foreign keys link Orders to Customers, Order_items to Orders and to Products, and Payments to Orders, so the imported CSV data becomes a relational model with enforced integrity.</span></li><li><b>Filter with subqueries</b><span>EXISTS finds customers with an order line of 500 to 1,000, NOT EXISTS finds customers who have paid but have no order items, and IN selects the payments for orders that contain Electronics.</span></li><li><b>Aggregate by customer and product</b><span>Total paid by UK customers whose orders hold more than three distinct products, units sold per product, and products sold more than ten times with their revenue (GROUP BY, HAVING, ORDER BY).</span></li><li><b>Rank with TOP N</b><span>The two highest payments from the UK and Australia after adding 12.2% VAT and rounding, and the three most expensive orders by total value.</span></li><li><b>Automate a pricing rule</b><span>ApplyHighValueDiscount is a stored procedure that takes 5% off payments of 17,000 or more for orders containing a laptop or smartphone, and prints how many rows it changed.</span></li><li><b>Join for detail</b><span>A four-table join lists every customer’s orders with the product names and quantities.</span></li></ol></section>
+        <section class="psec"><h3>Schema and queries</h3><figure class="erdfig"><div class="erdw"><svg class="erd" viewBox="0 0 640 340" role="img" aria-label="Entity relationship diagram: customers place orders, orders contain order items that point to products, and payments belong to orders"><path d="M194 169H230M410 169H446M536 88V130M320 208V250"></path><circle cx="230" cy="169" r="3.6"></circle><circle cx="446" cy="169" r="3.6"></circle><circle cx="536" cy="130" r="3.6"></circle><circle cx="320" cy="250" r="3.6"></circle><g><rect x="14" y="130" width="180" height="78" rx="10"></rect><text class="t" x="26" y="150">Customers</text><text class="l" x="26" y="170"><tspan class="k">KEY</tspan> customer_id</text><text class="l" x="26" y="184">name · email</text><text class="l" x="26" y="198">country</text></g><g><rect x="230" y="130" width="180" height="78" rx="10"></rect><text class="t" x="242" y="150">Orders</text><text class="l" x="242" y="170"><tspan class="k">KEY</tspan> order_id</text><text class="l" x="242" y="184"><tspan class="k">FK</tspan> customer_id</text></g><g><rect x="446" y="130" width="180" height="78" rx="10"></rect><text class="t" x="458" y="150">Order_items</text><text class="l" x="458" y="170"><tspan class="k">FK</tspan> order_id</text><text class="l" x="458" y="184"><tspan class="k">FK</tspan> product_id</text><text class="l" x="458" y="198">quantity · line totals</text></g><g><rect x="446" y="10" width="180" height="78" rx="10"></rect><text class="t" x="458" y="30">Products</text><text class="l" x="458" y="50"><tspan class="k">KEY</tspan> product_id</text><text class="l" x="458" y="64">product_name</text><text class="l" x="458" y="78">category</text></g><g><rect x="230" y="250" width="180" height="78" rx="10"></rect><text class="t" x="242" y="270">Payments</text><text class="l" x="242" y="290"><tspan class="k">FK</tspan> order_id</text><text class="l" x="242" y="304">payment_id · method</text><text class="l" x="242" y="318">amount_paid</text></g></svg></div><figcaption>Schema once the foreign keys are added. A dot marks the many side of each relationship.</figcaption></figure><div class="chart-block"><div class="tblwrap"><table class="rt txt wide"><caption>Business questions and the T-SQL used</caption>
+      <thead><tr><th scope="col">Task</th><th scope="col">Question answered</th><th scope="col">Technique</th></tr></thead>
+      <tbody><tr><td>2</td><td>Customers (name and country) with an order line totalling 500 to 1,000</td><td>Correlated EXISTS, BETWEEN</td></tr><tr><td>3</td><td>Total paid by UK customers whose orders hold more than three distinct products</td><td>JOIN, IN subquery, HAVING COUNT(DISTINCT)</td></tr><tr><td>4</td><td>Two highest payments from the UK and Australia after 12.2% VAT, rounded</td><td>TOP 2, ROUND, IN</td></tr><tr><td>5</td><td>Total quantity sold for each product</td><td>JOIN, SUM, GROUP BY</td></tr><tr><td>6</td><td>Apply a 5% discount to qualifying high-value payments</td><td>Stored procedure, UPDATE … FROM with joins, @@ROWCOUNT</td></tr><tr><td>7a</td><td>Customers who have paid but have no order items</td><td>EXISTS and NOT EXISTS</td></tr><tr><td>7a</td><td>Payment details for orders that contain Electronics</td><td>IN subquery</td></tr><tr><td>7b</td><td>Every customer’s orders with product names and quantities</td><td>Four-table JOIN</td></tr><tr><td>7c</td><td>The three most expensive orders</td><td>TOP 3, SUM, GROUP BY</td></tr><tr><td>7d</td><td>Products sold more than ten times, with total revenue</td><td>GROUP BY, HAVING, ORDER BY</td></tr></tbody></table></div></div></section>
+        <section class="psec"><h3>Key findings</h3><ul class="pts"><li>Adding foreign keys after the import turns loose CSV tables into a model where an order cannot exist without a customer and a payment cannot point at a missing order.</li><li>EXISTS and NOT EXISTS answer “has any” and “has none” questions without the duplicate rows a plain join would produce.</li><li>Counting distinct products, not rows, means a repeated line for the same product does not push an order over the “more than three products” threshold.</li><li>Putting the discount rule in a stored procedure keeps pricing logic in one place and reports how many payments it touched.</li></ul></section>
+        <section class="psec"><h3>Next steps</h3><ul class="pts"><li>Make ApplyHighValueDiscount idempotent: it multiplies by 0.95 on every run, so repeated runs compound the discount. Record the original amount or a discount flag first.</li><li>Add primary keys and indexes on customer_id, order_id and product_id, and confirm the gain with execution plans.</li><li>Wrap the reporting queries in views or parameterised procedures so a dashboard such as Power BI can reuse them.</li></ul></section>
+      </div>
+      <aside class="pside"><div class="glance"><h4>At a glance</h4><dl><div><dt>Platform</dt><dd>Microsoft SQL Server, T-SQL</dd></div><div><dt>Data</dt><dd>Five tables loaded from CSV files</dd></div><div><dt>Techniques</dt><dd>EXISTS and NOT EXISTS, IN subqueries, JOINs, GROUP BY and HAVING, TOP N</dd></div><div><dt>Scope</dt><dd>Customers, orders, order items, products, payments</dd></div></dl></div>
+        </aside></div>
+      <nav class="pnav" aria-label="More projects">
+        <a class="pn prev" href="/data-science-projects/airport-ticketing-db/" data-go="project/airport-ticketing-db"><small>← Previous project</small><b>Airport Ticketing System in SQL Server</b></a>
+        <a class="pn next" href="/data-science-projects/shopper-intent/" data-go="project/shopper-intent"><small>Next project →</small><b>Online Shopper Purchase-Intent Prediction</b></a></nav></article></div></section>
+
+    <!-- PROJECTS -->
+    
+
+    <!-- PROJECT DETAIL -->
+    
+
+    <!-- EXPERIENCE -->
+    
+
+    <!-- EDUCATION -->
+    
+
+    <!-- CERTIFICATES -->
+    
+
+    <!-- CONTACT -->
+    
+
+
+    <!-- LANDING: FLUTTER DEVELOPER -->
+    
+
+    <!-- LANDING: DATA SCIENTIST -->
+    
+
+    <!-- LANDING: FREELANCE FLUTTER DEVELOPER -->
+    
+
+    <footer>
+      <span>© <span id="yr">2026</span> Abdullah Mir</span>
+      <nav class="flinks" aria-label="More about me">
+        <a href="/flutter-developer/" data-go="flutter-developer">Flutter developer</a>
+        <a href="/data-scientist/" data-go="data-scientist">Data scientist</a>
+        <a href="/freelance-flutter-developer/" data-go="freelance-flutter-developer">Freelance Flutter developer</a>
+      </nav>
+      <span>Flutter · Data Science · Manchester</span>
+    </footer>
+  </main>
+</div>
+
+<script src="/app.js?v=45783115" defer></script>
+</body>
+</html>

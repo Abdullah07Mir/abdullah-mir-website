@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-GB" data-paths="1">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clinical Trials Analytics at Scale: Data Science Project | Abdullah Mir</title>
+<meta name="description" content="Spark SQL analysis of more than 520,000 registered clinical trials on Databricks: study-type mix, most-researched conditions, average trial duration and the…">
+<link rel="canonical" href="https://abdullah-mir.co.uk/data-science-projects/clinical-trials/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Abdullah Mir">
+<meta name="theme-color" content="#0B0E12" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#F3F6FC" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Abdullah Mir"><meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Clinical Trials Analytics at Scale: Data Science Project | Abdullah Mir"><meta property="og:description" content="Spark SQL analysis of more than 520,000 registered clinical trials on Databricks: study-type mix, most-researched conditions, average trial duration and the…"><meta property="og:url" content="https://abdullah-mir.co.uk/data-science-projects/clinical-trials/">
+<meta property="og:image" content="https://abdullah-mir.co.uk/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Abdullah Mir, Flutter developer and data scientist in Manchester, UK">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Clinical Trials Analytics at Scale: Data Science Project | Abdullah Mir"><meta name="twitter:description" content="Spark SQL analysis of more than 520,000 registered clinical trials on Databricks: study-type mix, most-researched conditions, average trial duration and the…"><meta name="twitter:image" content="https://abdullah-mir.co.uk/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://abdullah-mir.co.uk/data-science-projects/clinical-trials/#webpage","url":"https://abdullah-mir.co.uk/data-science-projects/clinical-trials/","name":"Clinical Trials Analytics at Scale: Data Science Project | Abdullah Mir","description":"Spark SQL analysis of more than 520,000 registered clinical trials on Databricks: study-type mix, most-researched conditions, average trial duration and the…","inLanguage":"en-GB","isPartOf":{"@id":"https://abdullah-mir.co.uk/#website"},"about":{"@id":"https://abdullah-mir.co.uk/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://abdullah-mir.co.uk/"},{"@type":"ListItem","position":2,"name":"Data science projects","item":"https://abdullah-mir.co.uk/data-science-projects/"},{"@type":"ListItem","position":3,"name":"Clinical Trials Analytics at Scale","item":"https://abdullah-mir.co.uk/data-science-projects/clinical-trials/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="/app.css?v=45783115">
+</head>
+<body data-mode="data">
+<div class="bg" aria-hidden="true"></div>
+<div class="routebar" id="routebar" aria-hidden="true"></div>
+
+<div class="layout">
+  <aside class="side">
+    <div class="brand">
+      <a class="who" href="/" data-go="home" aria-label="Abdullah Mir, home">
+        <span class="avatar"><span class="ring"></span><span class="face" id="face">AM</span></span>
+        <span class="who-t"><b>Abdullah Mir</b><small>Senior Flutter Developer<br>and Data Scientist</small></span>
+      </a>
+      <div class="eptools">
+        <button type="button" class="icon-btn" id="theme" aria-label="Switch colour theme"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+        <button type="button" class="icon-btn" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><div><span></span><span></span><span></span></div></button>
+      </div>
+    </div>
+    <div class="menu" id="menu">
+      <p class="loc"><i></i>Manchester, UK · open to opportunities</p>
+      <nav class="links" id="links" aria-label="Pages">
+        <span class="ind" id="ind"></span>
+        <a href="/" data-page="home">Home</a>
+        <a href="/data-science-projects/" data-page="projects">Projects</a>
+        <a href="/experience/" data-page="experience">Experience</a>
+        <a href="/education/" data-page="education">Education</a>
+        <a href="/certificates/" data-page="certificates">Certificates</a>
+        <a href="/contact/" data-page="contact">Contact</a>
+      </nav>
+      <div class="socials">
+        <a id="s-gh" href="https://github.com/abdullah07mir" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        <a id="s-li" href="https://www.linkedin.com/in/abdullah-mir-a46103249/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="/contact/" data-go="contact" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- HOME -->
+    <section class="page" id="page-project" aria-label="Project write-up"><div id="proj"><article class="proj" style="--sp:var(--data)">
+      <a class="back" href="/data-science-projects/" data-go="data"><span aria-hidden="true">←</span> All projects</a>
+      <header class="phead"><div class="meta"><span>Big data</span><span>MSc Data Science · University of Salford</span></div>
+        <h1 tabindex="-1">Clinical Trials Analytics at Scale</h1>
+        <div class="chiprow"><span class="chip">Apache Spark</span><span class="chip">Spark SQL</span><span class="chip">PySpark</span><span class="chip">Databricks</span><span class="chip">Data quality</span><span class="chip">Healthcare</span></div>
+        <p class="plead">Four business questions answered with Spark SQL on a January 2025 extract of more than 520,000 registered clinical trials, framed around long-term planning and market evaluation for the pharmaceutical sector. The work combines typed schema design, defensive parsing of messy fields and clearly commented, reproducible SQL.</p></header>
+      <div class="pkpis"><div><b>521K</b><small>Trials analysed</small></div><div><b>36.5 mo</b><small>Mean trial length</small></div><div><b>76.6%</b><small>Interventional studies</small></div><div><b>755</b><small>Diabetes trials completed in 2019 (peak)</small></div></div>
+      <div class="pgrid"><div class="pmain">
+        <section class="psec"><h3>The problem</h3><p>Strategy teams in pharma need to know what is being studied, how often and for how long. The registry extract is large, multi-valued (conditions are stored as delimited lists) and inconsistent (mixed date formats and shifted records), so each question starts with data engineering.</p></section>
+        <section class="psec"><h3>The data</h3><ul class="pts"><li>Loaded with an explicit StructType schema instead of inferred types, then exposed as a temporary SQL view so every query is repeatable.</li><li>A frequency check on Study Type exposed malformed rows (numbers and free text shifted into the column). The analysis whitelists the three valid study types.</li><li>Start and completion dates mix yyyy-MM and MM/dd/yyyy formats. They are parsed with CASE logic and regex guards, and negative durations are excluded.</li></ul></section>
+        <section class="psec"><h3>Approach</h3><ol class="steps"><li><b>Study types</b><span>Count trials per study type, excluding null and malformed values.</span></li><li><b>Most common conditions</b><span>Normalise the multi-valued Conditions field with regexp_replace, split and LATERAL VIEW explode, lower-case and trim, then rank the top ten.</span></li><li><b>Average trial length</b><span>A CTE parses both date formats; MONTHS_BETWEEN gives the duration in months, averaged over trials with valid start and completion dates.</span></li><li><b>Diabetes research over time</b><span>Completed studies that mention diabetes, grouped by completion year (1989 to 2025) and charted in Databricks.</span></li></ol></section>
+        <section class="psec"><h3>Results</h3><div class="chart-block"><h4>Trials by study type</h4><div class="hbars" role="img" aria-label="Trials by study type"><div class="hb" style="--w:79.9%;--i:0"><span class="hl">Interventional</span><span class="hv"><i></i></span><b>399,654</b></div><div class="hb" style="--w:24.2%;--i:1"><span class="hl">Observational</span><span class="hv"><i></i></span><b>120,816</b></div><div class="hb" style="--w:0.2%;--i:2"><span class="hl">Expanded access</span><span class="hv"><i></i></span><b>966</b></div></div>
+      <details><summary>View as table</summary><div class="tblwrap"><table><tbody><tr><td>Interventional</td><td>399,654</td></tr><tr><td>Observational</td><td>120,816</td></tr><tr><td>Expanded access</td><td>966</td></tr></tbody></table></div></details></div><div class="chart-block"><h4>Ten most-studied conditions (number of trials)</h4><div class="hbars" role="img" aria-label="Ten most-studied conditions (number of trials)"><div class="hb" style="--w:53.9%;--i:0"><span class="hl">Healthy</span><span class="hv"><i></i></span><b>10,786</b></div><div class="hb" style="--w:43.1%;--i:1"><span class="hl">Obesity</span><span class="hv"><i></i></span><b>8,616</b></div><div class="hb" style="--w:40.2%;--i:2"><span class="hl">Breast cancer</span><span class="hv"><i></i></span><b>8,031</b></div><div class="hb" style="--w:33.8%;--i:3"><span class="hl">Diabetes mellitus</span><span class="hv"><i></i></span><b>6,759</b></div><div class="hb" style="--w:33.3%;--i:4"><span class="hl">Pain</span><span class="hv"><i></i></span><b>6,657</b></div><div class="hb" style="--w:26.6%;--i:5"><span class="hl">Stroke</span><span class="hv"><i></i></span><b>5,328</b></div><div class="hb" style="--w:23.6%;--i:6"><span class="hl">Depression</span><span class="hv"><i></i></span><b>4,728</b></div><div class="hb" style="--w:23.6%;--i:7"><span class="hl">Hypertension</span><span class="hv"><i></i></span><b>4,719</b></div><div class="hb" style="--w:20.4%;--i:8"><span class="hl">Prostate cancer</span><span class="hv"><i></i></span><b>4,084</b></div><div class="hb" style="--w:19.3%;--i:9"><span class="hl">Cancer</span><span class="hv"><i></i></span><b>3,866</b></div></div>
+      <details><summary>View as table</summary><div class="tblwrap"><table><tbody><tr><td>Healthy</td><td>10,786</td></tr><tr><td>Obesity</td><td>8,616</td></tr><tr><td>Breast cancer</td><td>8,031</td></tr><tr><td>Diabetes mellitus</td><td>6,759</td></tr><tr><td>Pain</td><td>6,657</td></tr><tr><td>Stroke</td><td>5,328</td></tr><tr><td>Depression</td><td>4,728</td></tr><tr><td>Hypertension</td><td>4,719</td></tr><tr><td>Prostate cancer</td><td>4,084</td></tr><tr><td>Cancer</td><td>3,866</td></tr></tbody></table></div></details></div><div class="chart-block"><h4>Completed diabetes studies by completion year</h4><div class="chart-wrap" data-chart="c0"><svg class="chart" viewBox="0 0 640 300" role="img" aria-label="Completed diabetes studies by completion year"><line class="gl" x1="52" x2="622" y1="262" y2="262"></line><text x="44" y="266" text-anchor="end">0</text><line class="gl" x1="52" x2="622" y1="200.5" y2="200.5"></line><text x="44" y="204.5" text-anchor="end">200</text><line class="gl" x1="52" x2="622" y1="139" y2="139"></line><text x="44" y="143" text-anchor="end">400</text><line class="gl" x1="52" x2="622" y1="77.5" y2="77.5"></line><text x="44" y="81.5" text-anchor="end">600</text><line class="gl" x1="52" x2="622" y1="16" y2="16"></line><text x="44" y="20" text-anchor="end">800</text><text x="52" y="286" text-anchor="middle">1989</text><text x="133.42857142857144" y="286" text-anchor="middle">1994</text><text x="214.85714285714286" y="286" text-anchor="middle">1999</text><text x="296.2857142857143" y="286" text-anchor="middle">2004</text><text x="377.7142857142857" y="286" text-anchor="middle">2009</text><text x="459.14285714285717" y="286" text-anchor="middle">2014</text><text x="540.5714285714286" y="286" text-anchor="middle">2019</text><text x="622" y="286" text-anchor="middle">2024</text><path class="ln2" pathLength="1" stroke="var(--s1)" d="M52.0 261.4L68.3 261.7L84.6 261.7L100.9 261.1L117.1 261.1L133.4 261.4L149.7 261.4L166.0 261.4L182.3 261.1L198.6 258.9L214.9 258.6L231.1 255.8L247.4 254.0L263.7 246.3L280.0 238.6L296.3 223.9L312.6 203.6L328.9 187.0L345.1 164.8L361.4 134.4L377.7 120.9L394.0 98.7L410.3 103.9L426.6 80.9L442.9 82.7L459.1 79.0L475.4 57.5L491.7 67.4L508.0 41.8L524.3 51.4L540.6 29.8L556.9 90.1L573.1 84.6L589.4 60.9L605.7 72.6L622.0 130.7"></path><line class="cross" y1="16" y2="262" visibility="hidden"></line></svg><div class="tip" hidden=""></div></div>
+      <details><summary>View as table</summary><div class="tblwrap"><table><thead><tr><th></th><th>Completed studies</th></tr></thead><tbody><tr><td>1989</td><td>2</td></tr><tr><td>1990</td><td>1</td></tr><tr><td>1991</td><td>1</td></tr><tr><td>1992</td><td>3</td></tr><tr><td>1993</td><td>3</td></tr><tr><td>1994</td><td>2</td></tr><tr><td>1995</td><td>2</td></tr><tr><td>1996</td><td>2</td></tr><tr><td>1997</td><td>3</td></tr><tr><td>1998</td><td>10</td></tr><tr><td>1999</td><td>11</td></tr><tr><td>2000</td><td>20</td></tr><tr><td>2001</td><td>26</td></tr><tr><td>2002</td><td>51</td></tr><tr><td>2003</td><td>76</td></tr><tr><td>2004</td><td>124</td></tr><tr><td>2005</td><td>190</td></tr><tr><td>2006</td><td>244</td></tr><tr><td>2007</td><td>316</td></tr><tr><td>2008</td><td>415</td></tr><tr><td>2009</td><td>459</td></tr><tr><td>2010</td><td>531</td></tr><tr><td>2011</td><td>514</td></tr><tr><td>2012</td><td>589</td></tr><tr><td>2013</td><td>583</td></tr><tr><td>2014</td><td>595</td></tr><tr><td>2015</td><td>665</td></tr><tr><td>2016</td><td>633</td></tr><tr><td>2017</td><td>716</td></tr><tr><td>2018</td><td>685</td></tr><tr><td>2019</td><td>755</td></tr><tr><td>2020</td><td>559</td></tr><tr><td>2021</td><td>577</td></tr><tr><td>2022</td><td>654</td></tr><tr><td>2023</td><td>616</td></tr><tr><td>2024</td><td>427</td></tr></tbody></table></div></details></div></section>
+        <section class="psec"><h3>Key findings</h3><ul class="pts"><li>Interventional studies make up about three quarters of the registry (399,654 of 521,436), observational studies a further 23%, and expanded-access programmes under 0.2%.</li><li>Healthy volunteers are the most common category (10,786 trials), followed by obesity (8,616), breast cancer (8,031), diabetes mellitus (6,759) and pain (6,657).</li><li>Cleaning changed the answer. A naive split on the pipe character leaves diabetes mellitus (6,759 trials once normalised, fourth overall) out of the top ten altogether, and case and delimiter normalisation lifts obesity from 6,949 to 8,616.</li><li>The average trial runs 36.5 months, just over three years from start to completion.</li><li>Completed diabetes studies grew from 51 in 2002 to a peak of 755 in 2019, then settled between roughly 430 and 660 a year. The most recent years may be understated, and 2025 is left out of the chart, because the extract dates from January 2025.</li></ul></section>
+        <section class="psec"><h3>Next steps</h3><ul class="pts"><li>Replace the delimiter heuristic with a controlled vocabulary such as MeSH so compound condition names stay intact.</li><li>Cache the cleaned DataFrame and partition it by year to speed up repeated queries.</li><li>Extend the analysis to sponsors and funder types.</li></ul></section>
+      </div>
+      <aside class="pside"><div class="glance"><h4>At a glance</h4><dl><div><dt>Dataset</dt><dd>Clinicaltrial_16012025.csv: title, status, conditions, interventions, sponsor, funder type, study type and dates</dd></div><div><dt>Task</dt><dd>Descriptive analytics on a large registry</dd></div><div><dt>Stack</dt><dd>PySpark, Spark SQL, Databricks (DBFS, temporary views)</dd></div><div><dt>Techniques</dt><dd>CTEs, LATERAL VIEW explode, regexp_replace, CASE-based date parsing</dd></div></dl></div>
+        </aside></div>
+      <nav class="pnav" aria-label="More projects">
+        <a class="pn prev" href="/data-science-projects/steam-recommender/" data-go="project/steam-recommender"><small>← Previous project</small><b>Steam Game Recommender</b></a>
+        <a class="pn next" href="/data-science-projects/airport-ticketing-db/" data-go="project/airport-ticketing-db"><small>Next project →</small><b>Airport Ticketing System in SQL Server</b></a></nav></article></div></section>
+
+    <!-- PROJECTS -->
+    
+
+    <!-- PROJECT DETAIL -->
+    
+
+    <!-- EXPERIENCE -->
+    
+
+    <!-- EDUCATION -->
+    
+
+    <!-- CERTIFICATES -->
+    
+
+    <!-- CONTACT -->
+    
+
+
+    <!-- LANDING: FLUTTER DEVELOPER -->
+    
+
+    <!-- LANDING: DATA SCIENTIST -->
+    
+
+    <!-- LANDING: FREELANCE FLUTTER DEVELOPER -->
+    
+
+    <footer>
+      <span>© <span id="yr">2026</span> Abdullah Mir</span>
+      <nav class="flinks" aria-label="More about me">
+        <a href="/flutter-developer/" data-go="flutter-developer">Flutter developer</a>
+        <a href="/data-scientist/" data-go="data-scientist">Data scientist</a>
+        <a href="/freelance-flutter-developer/" data-go="freelance-flutter-developer">Freelance Flutter developer</a>
+      </nav>
+      <span>Flutter · Data Science · Manchester</span>
+    </footer>
+  </main>
+</div>
+
+<script src="/app.js?v=45783115" defer></script>
+</body>
+</html>
